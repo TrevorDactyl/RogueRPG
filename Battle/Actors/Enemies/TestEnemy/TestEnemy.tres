@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="BattleActor" load_steps=4 format=3 uid="uid://colp0gomknw3u"]
+
+[ext_resource type="Script" path="res://Battle/BattleActor.gd" id="1_0lbsd"]
+[ext_resource type="PackedScene" uid="uid://e1ec73vwg135" path="res://Battle/Actors/Enemies/TestEnemy/TestEnemy.tscn" id="2_5wjhx"]
+[ext_resource type="Script" path="res://Battle/Skills/Skill System/skill.gd" id="2_xxig7"]
+
+[resource]
+script = ExtResource("1_0lbsd")
+name = "Test Enemy"
+role = []
+level = 1
+hp_max = 150
+mp_max = 500
+attack = 1
+defense = 1
+magAttack = 1
+magDefense = 1
+speed = 1
+skills = Array[ExtResource("2_xxig7")]([])
+statGrowth = []
+expGrowth = []
+useSprite = ExtResource("2_5wjhx")

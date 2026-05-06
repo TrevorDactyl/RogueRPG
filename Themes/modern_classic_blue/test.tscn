@@ -1,0 +1,78 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0upge0fmidcq"]
+
+[ext_resource type="Theme" uid="uid://xvo1sq6mt7ca" path="res://modern_classic_blue/modern_classic_blue.tres" id="1_37kl0"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = -14.0
+offset_right = 23.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 282.0
+offset_bottom = 165.0
+theme = ExtResource("1_37kl0")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 66.0
+offset_bottom = 22.0
+theme = ExtResource("1_37kl0")
+page = 0.645
+value = 34.79
+show_percentage = false
+
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 27.0
+offset_right = 120.0
+offset_bottom = 51.0
+theme = ExtResource("1_37kl0")
+button_pressed = true
+text = "sadsadsadsadsa"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 51.0
+offset_right = 117.0
+offset_bottom = 68.0
+theme = ExtResource("1_37kl0")
+text = "fssaasdsadsadsadsa"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 90.0
+offset_right = 206.0
+offset_bottom = 144.0
+theme = ExtResource("1_37kl0")
+text = "asdsadsadsads"
+placeholder_text = "asdasdsad"
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 40.0
+offset_right = 380.0
+offset_bottom = 168.0
+theme = ExtResource("1_37kl0")
+
+[node name="CheckButton" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 27.0
+offset_right = 201.0
+offset_bottom = 51.0
+theme = ExtResource("1_37kl0")
+text = "sadsadsa"

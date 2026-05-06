@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c216ah5m4lyv"]
+
+[ext_resource type="Script" path="res://Battle/battle_state_machine.gd" id="1_877vm"]
+[ext_resource type="Script" path="res://Battle/player_turn.gd" id="2_ivhq6"]
+[ext_resource type="Script" path="res://Battle/target_phase.gd" id="3_u5kko"]
+[ext_resource type="Script" path="res://Battle/enemy_turn.gd" id="4_hd2di"]
+
+[node name="BattleStateMachine" type="Node" node_paths=PackedStringArray("current_state", "starting_state", "targetState")]
+script = ExtResource("1_877vm")
+current_state = NodePath("PlayerTurn")
+starting_state = NodePath("PlayerTurn")
+targetState = NodePath("TargetTurn")
+
+[node name="PlayerTurn" type="Node" parent="." node_paths=PackedStringArray("targetTurn")]
+script = ExtResource("2_ivhq6")
+targetTurn = NodePath("../TargetTurn")
+
+[node name="TargetTurn" type="Node" parent="." node_paths=PackedStringArray("playerTurn")]
+script = ExtResource("3_u5kko")
+playerTurn = NodePath("../PlayerTurn")
+
+[node name="EnemyTurn" type="Node" parent="." node_paths=PackedStringArray("playerTurn")]
+script = ExtResource("4_hd2di")
+playerTurn = NodePath("../PlayerTurn")

@@ -1,0 +1,6 @@
+Increment turn counter after action complete
+
+Implement Defending
+Implement submenus for skills and items
+
+Implement enemy AI

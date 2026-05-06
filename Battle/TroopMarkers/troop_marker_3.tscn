@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://vu1fac7cksev"]
+
+[ext_resource type="Script" path="res://Battle/TroopMarkers/troop_marker_3.gd" id="1_48p60"]
+
+[node name="TroopMarker3" type="Node"]
+script = ExtResource("1_48p60")
+markerCount = 3
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(383, 261)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(295, 186)
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(298, 350)

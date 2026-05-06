@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhlstn3ch1koo"]
+
+[ext_resource type="Texture2D" uid="uid://d3ylxjg8ffkkh" path="res://Themes/modern_classic_blue/cursor.png" id="1_onfw5"]
+[ext_resource type="Script" path="res://System/menu_cursor.gd" id="2_b1dxm"]
+
+[node name="MenuCursor" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("1_onfw5")
+stretch_mode = 2
+script = ExtResource("2_b1dxm")
+cursor_offset = Vector2(20, -2)

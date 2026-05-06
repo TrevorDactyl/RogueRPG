@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="BattleActor" load_steps=5 format=3 uid="uid://bjho0lxjx2y01"]
+
+[ext_resource type="Texture2D" uid="uid://055umj8oig63" path="res://Placeholders/placeholderIcon.png" id="1_3tv34"]
+[ext_resource type="Script" path="res://Battle/BattleActor.gd" id="2_ukysp"]
+[ext_resource type="Script" path="res://Battle/Skills/Skill System/skill.gd" id="3_e324y"]
+[ext_resource type="PackedScene" uid="uid://coxcxlnjhtvv4" path="res://Battle/Actors/Allies/Wilhelm/Wilhelm.tscn" id="4_5budj"]
+
+[resource]
+script = ExtResource("2_ukysp")
+name = "Wilhelm"
+role = []
+level = 1
+hp_max = 627
+mp_max = 45
+attack = 24
+defense = 26
+magAttack = 37
+magDefense = 34
+speed = 1
+skills = Array[ExtResource("3_e324y")]([])
+statGrowth = []
+expGrowth = []
+useSprite = ExtResource("4_5budj")
+icon = ExtResource("1_3tv34")

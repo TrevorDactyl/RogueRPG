@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://nwupioe1u0sk"]
+
+[ext_resource type="Script" path="res://Battle/party_marker.gd" id="1_24pnw"]
+
+[node name="PartyMarker" type="Node"]
+script = ExtResource("1_24pnw")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+
+[node name="Marker2D4" type="Marker2D" parent="."]

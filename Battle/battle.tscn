@@ -1,0 +1,107 @@
+[gd_scene load_steps=13 format=3 uid="uid://bs0bownrcd462"]
+
+[ext_resource type="Script" path="res://Battle/Battle.gd" id="1_cbvvu"]
+[ext_resource type="Theme" uid="uid://xvo1sq6mt7ca" path="res://Themes/modern_classic_blue/modern_classic_blue.tres" id="1_ihlwo"]
+[ext_resource type="Theme" uid="uid://b65pxfb2gx0cy" path="res://Themes/DefaultTheme.tres" id="3_f6run"]
+[ext_resource type="Resource" uid="uid://c1qnhle3ir421" path="res://Battle/Skills/attack.tres" id="4_42eyj"]
+[ext_resource type="PackedScene" uid="uid://bofeox8jh2j8g" path="res://System/actor_window.tscn" id="4_dfmva"]
+[ext_resource type="PackedScene" uid="uid://bedj184shm3e3" path="res://Battle/battle_manager.tscn" id="5_qtjg8"]
+[ext_resource type="PackedScene" uid="uid://cu35kmlwtj808" path="res://System/menu_manager.tscn" id="6_n3jyk"]
+[ext_resource type="PackedScene" uid="uid://c216ah5m4lyv" path="res://Battle/BattleStateMachine.tscn" id="6_nldep"]
+[ext_resource type="Script" path="res://Battle/testLabel.gd" id="7_mwjb2"]
+[ext_resource type="PackedScene" uid="uid://nwupioe1u0sk" path="res://Battle/PartyMarker.tscn" id="8_2q4u0"]
+[ext_resource type="PackedScene" uid="uid://vu1fac7cksev" path="res://Battle/TroopMarkers/troop_marker_3.tscn" id="9_yq648"]
+[ext_resource type="PackedScene" uid="uid://dhlstn3ch1koo" path="res://System/menu_cursor.tscn" id="11_2wyqg"]
+
+[node name="Battle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ihlwo")
+script = ExtResource("1_cbvvu")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="BattleManager" parent="." node_paths=PackedStringArray("partyMarkers", "troopMarkers", "actorWindows", "stateMachine", "menuMngr") instance=ExtResource("5_qtjg8")]
+partyMarkers = NodePath("../PartyMarker")
+troopMarkers = NodePath("../TroopMarker3")
+actorWindows = NodePath("../CanvasLayer/ActorWindows")
+stateMachine = NodePath("BattleStateMachine")
+menuMngr = NodePath("../Menu Manager")
+baseAttack = ExtResource("4_42eyj")
+
+[node name="BattleStateMachine" parent="BattleManager" instance=ExtResource("6_nldep")]
+
+[node name="Menu Manager" parent="." node_paths=PackedStringArray("battleMngr") instance=ExtResource("6_n3jyk")]
+battleMngr = NodePath("../BattleManager")
+
+[node name="Label" type="Label" parent="." node_paths=PackedStringArray("battleManage")]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 8.0
+text = "asdasd"
+script = ExtResource("7_mwjb2")
+battleManage = NodePath("../BattleManager")
+
+[node name="PartyMarker" parent="." instance=ExtResource("8_2q4u0")]
+
+[node name="Marker2D" parent="PartyMarker" index="0"]
+position = Vector2(800, 215)
+
+[node name="Marker2D2" parent="PartyMarker" index="1"]
+position = Vector2(830, 255)
+
+[node name="Marker2D3" parent="PartyMarker" index="2"]
+position = Vector2(860, 294)
+
+[node name="Marker2D4" parent="PartyMarker" index="3"]
+position = Vector2(890, 334)
+
+[node name="TroopMarker3" parent="." instance=ExtResource("9_yq648")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ActorWindows" type="HBoxContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(720, 183)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -360.0
+offset_top = -183.0
+offset_right = 360.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_f6run")
+alignment = 1
+
+[node name="BoxContainer" parent="CanvasLayer/ActorWindows" instance=ExtResource("4_dfmva")]
+layout_mode = 2
+
+[node name="BoxContainer2" parent="CanvasLayer/ActorWindows" instance=ExtResource("4_dfmva")]
+layout_mode = 2
+
+[node name="BoxContainer3" parent="CanvasLayer/ActorWindows" instance=ExtResource("4_dfmva")]
+layout_mode = 2
+
+[node name="BoxContainer4" parent="CanvasLayer/ActorWindows" instance=ExtResource("4_dfmva")]
+layout_mode = 2
+
+[node name="MenuCursor" parent="." instance=ExtResource("11_2wyqg")]
+layout_mode = 1
+
+[editable path="PartyMarker"]
+[editable path="TroopMarker3"]

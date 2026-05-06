@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://dffnxjuojsn8q"]
+
+[ext_resource type="Texture2D" uid="uid://vj7c8bwnkiv8" path="res://Themes/modern_classic_blue/panel.png" id="1_muavl"]
+[ext_resource type="Script" path="res://Battle/actions_window.gd" id="2_6pcvx"]
+
+[node name="ActionsWindow" type="NinePatchRect"]
+offset_right = 180.0
+offset_bottom = 180.0
+texture = ExtResource("1_muavl")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+script = ExtResource("2_6pcvx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(170, 170)
+layout_mode = 1
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 175.0
+offset_bottom = 175.0
+
+[node name="AtkButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Attack"
+flat = true
+
+[node name="SkllButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+button_mask = 0
+text = "Skill"
+flat = true
+
+[node name="ItemButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+button_mask = 0
+text = "Item"
+flat = true
+
+[node name="DfdButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+button_mask = 0
+text = "Defend"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/AtkButton" to="." method="_on_atk_button_pressed"]

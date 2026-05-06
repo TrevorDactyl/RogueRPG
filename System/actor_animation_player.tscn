@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwqeywa3cxyfq"]
+
+[sub_resource type="Animation" id="Animation_pmvt2"]
+resource_name = "attack"
+
+[sub_resource type="Animation" id="Animation_iju1d"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_hlaoh"]
+resource_name = "cast"
+
+[sub_resource type="Animation" id="Animation_x0q5p"]
+resource_name = "defend"
+
+[sub_resource type="Animation" id="Animation_xljq6"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x7n5i"]
+_data = {
+"RESET": SubResource("Animation_xljq6"),
+"attack": SubResource("Animation_pmvt2"),
+"cast": SubResource("Animation_hlaoh"),
+"defend": SubResource("Animation_x0q5p"),
+"idle": SubResource("Animation_iju1d")
+}
+
+[node name="ActorAnimationPlayer" type="AnimationPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_x7n5i")
+}
